@@ -1,0 +1,245 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video</title>
+    <style>
+        body{
+            color:white;
+            margin:0px;
+            padding:0px;
+        }
+        header.feature-box.top{
+        background-color:black;
+        height:100px;
+        margin:0px;
+        padding:20px;
+        text-align:center;
+        }
+        header.feature-box.second{
+        background-color:blue;
+        height:50px;
+        text-align:center;
+        margin-top:-25px;
+        }
+        .features{
+          background-color:black;
+          width: 900px;
+          height: 700px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:20px;
+        }
+        section.col-sm{
+          background-color:black;
+          width: 1000px;
+          height: 650px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:40px;
+        }
+
+        img{
+          width: 900px;
+          height: 600px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:40px;
+        }
+
+        .new{
+        color:black;
+        margin:0px;
+        padding:10px;
+        background-color:green;
+        margin:0px;
+        margin-top:-10px;
+        }
+    </style>
+</head>
+<body>
+<header class="feature-box top">
+    <h1><strong>Object Detection using YOLOv8</strong></h1>
+</header>
+<header class="feature-box second">
+     <h1><strong>Output Video</strong></h1>
+</header>
+
+  <section class="col-sm " >
+          <img src="{{ url_for('webapp') }}"   alt="Upload video">
+
+  </section>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video</title>
+    <style>
+     body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:#1A1E23;
+            height: 100vh;
+        }
+        header.feature-box.right{
+        background-color:#23272F;
+        color:white;
+        border-bottom-color: rgba(246,247,249,.05);
+        border-width: 1px;
+margin-bottom: 1rem;
+
+        /* height:70px; */
+        padding:5px;
+        text-align:right;
+        }
+
+        ul{
+        list-style:none;
+        padding:0px;
+    margin: 0px;}
+
+        li{
+        display:inline-block;
+        /* background-color:gray; */
+        border-radius:10px;
+        color:#707377;
+        padding:10px;
+        /* margin:10px; */
+        }
+        a:hover{
+        /* background-color:black; */
+        /* margin:10px; */
+        color: white;
+        }
+        header a{
+        color:#707377;
+        text-decoration:none;
+        width:100%;
+        }
+        .details{
+        height:80px;
+        margin:40px;
+        padding:0px;
+        font-size:40px;
+        background-color:gray;
+        text-align:center;
+        color:black;
+        }
+
+        .features{
+          background-color:black;
+          width: 900px;
+/* <!--          height: 700px;--> */
+height: 650px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:20px;
+        }
+        section.col-sm{
+          background-color:black;
+          width: 85vw;
+          height: 80vh;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .custom-file-input{
+          color: #717377;
+        }
+
+        .col-sm image{
+          align-items: center;
+        }
+.video-container{
+height: 650px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+        img{
+          width: 82vw;
+         margin:9rem;
+
+          object-fit: contain;
+
+         text-align: center;
+        }
+
+        .new{
+        color:black;
+        margin:0px;
+        padding:10px;
+        background-color:#23272F;
+        margin:0px;
+        border-radius: 8px;
+        border: 0.5px solid #ccc;
+        padding: 1rem;
+        margin-bottom: 1rem;
+         box-shadow: 0 1.5px 2px #717377;
+        margin-top:-10px;
+        }
+        .btnCustom{
+          background: #6a61ff;
+          color: white;
+          text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            box-shadow: 0 1px 1px #6a61ff;
+            transition: background-color 0.3s;
+            padding-inline:0px;
+            display: block;
+             padding: 8px 12px;
+             border: none;
+
+        }
+
+    </style>
+</head>
+<body>
+
+  <header class="feature-box right">
+    <nav>
+        <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/FrontPage">Video</a></li>
+        <li><a href="/webcam">LiveWebcam</a></li>
+        <li><a href="/rtsp_feed">RTSP Feed</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- 
+<header class="feature-box top">
+    <h1><strong> Abnormal Event Detection using YOLOv8</strong></h1>
+</header>
+<header class="feature-box second">
+     <h1><strong>Output Video</strong></h1>
+</header> -->
+<div class="video-container">
+
+  <section class="col-sm " >
+    <img src="{{ url_for('webapp') }}"   alt="Upload video">
+
+</section>
+
+
+</div>
+</body>
+</html>
+

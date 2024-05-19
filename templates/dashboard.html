@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1A1E23;
+    }
+
+         header.feature-box.right{
+        background-color:#23272F;
+        color:white;
+        border-bottom-color: rgba(246,247,249,.05);
+        border-width: 1px;
+
+
+        /* height:70px; */
+        padding:5px;
+        text-align:right;
+        }
+
+        .header-ul{
+        list-style:none;
+        padding:0px;
+    margin: 0px;}
+
+    .header-li{
+        display:inline-block;
+        /* background-color:gray; */
+        border-radius:10px;
+        color:#707377;
+        padding:10px;
+        /* margin:10px; */
+        }
+        a:hover{
+        /* background-color:black; */
+        /* margin:10px; */
+        color: white;
+        }
+        header a{
+        color:#707377;
+        text-decoration:none;
+        width:100%;
+        }
+        .details{
+        height:80px;
+        margin:40px;
+        padding:0px;
+        font-size:40px;
+        background-color:gray;
+        text-align:center;
+        color:#1A1E23;
+        }
+        /* ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        } */
+
+
+    .container {
+      max-width: 90vw;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #23272F;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: white;
+      font-size: 36px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+
+    }
+    .video-container {
+
+
+    }
+    video {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      border: 2px solid #ccc; /* Increase border size to 2px and set color to light gray */
+    }
+    video:hover {
+      transform: translateY(-5px);
+      filter: brightness(1.1); /* Add a slight brightness increase on hover */
+    }
+    .video-item {
+      display: flex;
+      width: 20rem;
+      flex-direction: column;
+       background:#1A1E23;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .video-info {
+      flex-grow: 1;
+      padding: 10px 0px;
+      background-color: #1A1E23;
+      color: white;
+      border-radius: 0 5px 5px 0;
+    }
+    .video-title {
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: white;
+    }
+    .video-ul{
+    display:flex;
+   gap:2;
+   align-items: center;
+   justify-content: center;
+    flex-wrap: wrap;
+    }
+    .video-description {
+      color: #666;
+      font-size: 14px;
+    
+    }
+  </style>
+</head>
+<body>
+
+
+    <header class="feature-box right">
+        <nav>
+            <ul class="header-ul">
+            <li class="header-li"><a href="/">Home</a></li>
+            <li class="header-li" ><a href="/FrontPage">Video</a></li>
+            <li class="header-li"><a href="/webcam">LiveWebcam</a></li>
+            <li class="header-li" ><a href="/rtsp_feed">RTSP Feed</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <div class="container">
+    <h1>Emergency Dashboard</h1>
+    <div class="video-container">
+      <ul class="video-ul">
+        {% for video in videos %}
+          {% set video_name_parts = video.split('_') %}
+          {% set video_title = video_name_parts[3] %}
+          {% set video_date = video_name_parts[3] %}
+          {% set video_time = video_name_parts[4] %}
+          {% set video_location = video_name_parts[5].split('.')[0] %}
+          <li class="video-item">
+            <video controls muted preload="metadata">
+            <source src="{{ video }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+            <div class="video-info">
+              <h2 class="video-title">{{ video.split('/')[-1].split('_')[0] }}</h2>
+              <p class="video-description">
+                Date: {{ video_date[8:10] }}-{{ video_date[5:7] }}-{{ video_date[0:4] }}<br>
+                Time: {{ video_time.replace('-', ':') }}<br>
+                Location: {{ video_location }}
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

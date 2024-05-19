@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:#1A1E23;
+            height: 100vh;
+        }
+
+
+
+        header.feature-box.right{
+        background-color:#23272F;
+        color:white;
+        border-bottom-color: rgba(246,247,249,.05);
+        border-width: 1px;
+
+
+        /* height:70px; */
+        padding:5px;
+        text-align:right;
+        }
+
+        ul{
+        list-style:none;
+        padding:0px;
+    margin: 0px;}
+
+        li{
+        display:inline-block;
+        /* background-color:gray; */
+        border-radius:10px;
+        color:#707377;
+        padding:10px;
+        /* margin:10px; */
+        }
+        a:hover{
+        /* background-color:black; */
+        /* margin:10px; */
+        color: white;
+        }
+        header a{
+        color:#707377;
+        text-decoration:none;
+        width:100%;
+        }
+        .details{
+        height:80px;
+        margin:40px;
+        padding:0px;
+        font-size:40px;
+        background-color:gray;
+        text-align:center;
+        color:black;
+        }
+
+
+
+
+
+
+        .container {
+            /* max-width: 70rem; */
+            /* min-width: 45vw; */
+
+            border: solid #717377 2px;
+            background-color:#23272F; /* White background color for the form */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px #717377;
+            display: flex;
+            height:25rem;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .cont{
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3 {
+           color: white;
+            text-align: center;
+            margin-top: 4px;
+
+        }
+
+        form {
+           height: 35vh;
+           display: flex;
+           min-width: 25rem;
+           justify-content: center;
+           flex-direction: column;
+           /* align-items: center; */
+        }
+        
+        .user_input {
+           display: block;
+           margin-bottom: 5px;
+           font-size: medium;
+           margin-left: 5rem;
+           color: #dcdcdc;
+        }
+
+        label {
+           display: block;
+           font-size: medium;
+           color: #dcdcdc;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 20rem;
+            color:white;
+            padding: 8px;
+            margin-left: 5rem;
+            margin-right: 5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 1.5px 2px #717377;
+            background: #23272F;
+            border: 2px solid #ccc;
+            border-radius: 3px;
+        }
+        /* block w-full rounded-md border-lightblack border-[2px]  py-1.5 pl-7 pr-20  text-white text-lightblack-900 ring-1 ring-inset ring-lightblack-300 placeholder:text-gray-400 focus:ring-2 bg-secoundblack focus:ring-inset focus:ring-lightblack-600 border-lightblack sm:text-sm sm:leading-6  mb-6 */
+        input[type="checkbox"] {
+            margin-right: 5px;
+            display: inline-block; /* Display checkbox inline */
+            vertical-align: middle; /* Align checkbox vertically with text */
+        }
+
+        .remember-me {
+            display: inline-block; /* Display text inline */
+            vertical-align: middle; /* Align text vertically with checkbox */
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #6a61ff; /* Blue button color */
+            color: #fff;
+            margin-left: 5rem;
+            margin-right: 5rem;
+            border: none;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            box-shadow: 0 1px 1px #6a61ff;
+            transition: background-color 0.3s;
+            padding-inline:0px;
+            display: block;
+            
+        }
+
+        button:hover {
+            background-color: #6961ffce; /* Darker blue on hover */
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .text-tag{
+            color: #717377;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header class="feature-box right">
+        <nav>
+            <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/FrontPage">Video</a></li>
+            <li><a href="/webcam">LiveWebcam</a></li>
+            <li><a href="/rtsp_feed">RTSP Feed</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cont">
+    <div class="container">
+
+        <p class="text-tag ">WELCOME BACK</p>
+        <h3>Log in to your account</h3>
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <label for="username" class="user_input">{{ form.username.label }}</label>
+            {{ form.username }}
+            <label for="password" class="user_input" >{{ form.password.label }}</label>
+            {{ form.password }}
+            <!-- <label class="remember-me" for="remember_me">{{ form.remember_me }} Remember Me</label> -->
+            <button type="submit">{{ form.submit.label }}</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

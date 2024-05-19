@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ObjectDetection-YOLOv8</title>
+    <style>
+        body{
+        font-family:Helvetica, sans-serif;
+        margin:0px;
+        padding:0px;
+        }
+        header.feature-box.right{
+        background-color:#23272F;
+        color:white;
+        border-bottom-color: rgba(246,247,249,.05);
+        border-width: 1px;
+       
+        /* height:70px; */
+        padding:5px;
+        text-align:right;
+        }
+        .main-image{
+        height:550px;
+        opacity:0.7;
+        /* filter: grayscale(); */
+        background-color:blue;
+        background-image:url("../static/images/1.jpg");
+        color:red;
+        background-size:100%;
+
+        background-position:center;
+        }
+
+        ul{
+        list-style:none;
+        padding:0px;
+    margin: 0px;}
+
+        li{
+        display:inline-block;
+        /* background-color:gray; */
+        border-radius:10px;
+        color:#707377;
+        padding:10px;
+        /* margin:10px; */
+        }
+        a:hover{
+        /* background-color:black; */
+        /* margin:10px; */
+        color: white;
+        }
+        header a{
+        color:#707377;
+        text-decoration:none;
+        width:100%;
+        }
+        .details{
+        height:80px;
+        margin:40px;
+        padding:0px;
+        font-size:40px;
+        background-color:gray;
+        text-align:center;
+        color:black;
+        }
+
+        .features{
+        background:white;
+        color:gray;
+        display:flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        padding:20px;
+
+        }
+        .features figure
+        {/*background:pink;*/
+        width:400px;
+        margin:auto;
+        text-align:center;
+        text-transform:uppercase;
+        }
+        .features figure img{
+        border-radius:10%;
+        width:400px;
+        }
+        div.main{
+        display:flex;
+        margin:40px;
+        letter-spacing:1px;
+        h1, h2, h3, h4, h5, h6 {
+          font-family: "Playfair Display";
+    letter-spacing: 5px;
+        }
+        }
+        .subpart2{
+        text-align:center;
+        text-transform:uppercase;
+        }
+        .subpart2 figure img{
+        border-radius:4%;
+        width:800px;
+        }
+        .contactpage{
+        margin:20px;
+        }
+        #textbox {
+       font-size: 18pt;
+        height: 42px;
+        width : 1000px;
+        }
+        #textboxes {
+       font-size: 18pt;
+        height: 42px;
+        width : 1000px;
+        }
+        footer{
+        background-color:black;
+        text-align:center;
+        margin:0px;
+        padding:0px;
+        color:white;
+        font-size:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="feature-box right">
+        <nav>
+            <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/FrontPage">Video</a></li>
+            <li><a href="/webcam">LiveWebcam</a></li>
+            <li><a href="/rtsp_feed">RTSP Feed</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="main-image">
+    </header>
+
+
+    <section class="details">
+        <h1>Sample Results</h1>
+
+    </section>
+    <section class="features">
+        <figure>
+            <img src="../static/images/2.jpg" alt="YOLOv8 Results 1">
+            <figcaption>Chain Snatching</figcaption>
+        </figure>
+        <figure>
+            <img src="../static/images/3.jpg" alt="YOLOv8 Results 2">
+            <figcaption>Kidnapping</figcaption>
+        </figure>
+        <figure>
+            <img src="../static/images/4.jpg" alt="YOLOv8 Results 3">
+            <figcaption>Accident</figcaption>
+    </figure>
+        <figure>
+            <img src="../static/images/5.jpg" alt="YOLOv8 Results 3">
+            <figcaption>Fighting</figcaption>
+    </figure>
+    </section>
+  
+
+
+
+<footer>
+    <p>Project Done by Team -14 </p>
+</footer>
+</body>
+</html>
